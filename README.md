@@ -1,0 +1,2 @@
+# lzthegamer
+Loja de Gamer
