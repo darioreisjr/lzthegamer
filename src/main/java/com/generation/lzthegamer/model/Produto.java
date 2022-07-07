@@ -18,21 +18,24 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
-	private String nomeproduto;
-	
-	@NotNull
-	private int quantidadeEmEstoque;
-	
-	@NotNull
-	private double preco;
-	
-	@NotNull
-	private String marca;
-	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+	
+	@NotNull
+	private String produto;
+	
+	@NotNull
+	private String marcaProduto;
+	
+	@NotNull
+	private int quantidade;
+	
+	@NotNull
+	private double precoUnitario;
+	
+	@NotNull
+	private String estoque;
 
 	public long getId() {
 		return id;
@@ -42,40 +45,6 @@ public class Produto {
 		this.id = id;
 	}
 
-	
-
-	public String getNomeproduto() {
-		return nomeproduto;
-	}
-
-	public void setNomeproduto(String nomeproduto) {
-		this.nomeproduto = nomeproduto;
-	}
-
-	public int getQuantidadeEmEstoque() {
-		return quantidadeEmEstoque;
-	}
-
-	public void setQuantidadeEmEstoque(int quantidadeEmEstoque) {
-		this.quantidadeEmEstoque = quantidadeEmEstoque;
-	}
-
-	public double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
-
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -83,6 +52,48 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+
+	public String getProduto() {
+		return produto;
+	}
+
+	public void setProduto(String produto) {
+		this.produto = produto;
+	}
+
+	public String getMarcaProduto() {
+		return marcaProduto;
+	}
+
+	public void setMarcaProduto(String marcaProduto) {
+		this.marcaProduto = marcaProduto;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public double getPrecoUnitario() {
+		return precoUnitario;
+	}
+
+	public void setPrecoUnitario(double precoUnitario) {
+		this.precoUnitario = precoUnitario;
+	}
+
+	public String getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(String estoque) {
+		this.estoque = estoque;
+	}
 	
+	
+
 	
 }

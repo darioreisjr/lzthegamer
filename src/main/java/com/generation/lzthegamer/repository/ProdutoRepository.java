@@ -10,6 +10,6 @@ import com.generation.lzthegamer.model.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	
-	public List<Produto> findAllByNomeprodutoContainingIgnoreCase (String nomeproduto);
+	public List<Produto> findAllByProdutoContainingIgnoreCase (String produto);
 
 }
