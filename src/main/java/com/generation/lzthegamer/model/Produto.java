@@ -37,6 +37,10 @@ public class Produto {
 	@NotNull
 	private String estoque;
 
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+
 	public long getId() {
 		return id;
 	}
@@ -92,8 +96,14 @@ public class Produto {
 	public void setEstoque(String estoque) {
 		this.estoque = estoque;
 	}
-	
-	
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 	
 }
