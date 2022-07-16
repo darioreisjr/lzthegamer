@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.lzthegamer.model.UserLogin;
 import com.generation.lzthegamer.model.Usuario;
 import com.generation.lzthegamer.repository.UsuarioRepository;
-
 import com.generation.lzthegamer.service.UsuarioService;
 
 @RestController
@@ -85,4 +85,12 @@ public class UsuarioController {
 	
 	
 	// metodo bonus - atualizar usuário.
+	
+	@PutMapping("/atualizar")
+	public ResponseEntity<Usuario> putUsuario(@Valid @RequestBody Usuario usuario){
+		
+		return usuarioService.atualizarUsuario(usuario)
+			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
+			.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	}
 }
